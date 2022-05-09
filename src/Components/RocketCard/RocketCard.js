@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React, { useEffect } from 'react';
 import { Card, Row, Col, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,12 +27,15 @@ const RocketCard = () => {
                                 {rockets.map((data) => (
                                     <Col >
                                         <Card>
-                                            <Card.Img variant="top" src="holder.js/100px160" />
+                                            <Card.Img variant="top" src={data.links.mission_patch} />
                                             <Card.Body>
-                                                <Card.Title>Card title</Card.Title>
+                                                <Card.Title>{data.mission_name} | {data.rocket.rocket_name} | {data.rocket.rocket_type}</Card.Title>
                                                 <Card.Text>
-                                                    This is a longer card with supporting text below as a natural
-                                                    lead-in to additional content. This content is a little bit longer.
+                                                    {moment(data.launch_date_local).format('llll')}, {data.launch_site.site_name_long} ,{data.launch_success ? <span>Successfully Launch</span> : <span>Launch Failed</span>}
+                                                    <div className='d-flex '>
+                                                        <p><a href={data.links.article_link} target='_blank' rel="noreferrer">DETAILS</a></p>
+                                                        <p className='ms-4'><a href={data.links.video_link} target='_blank' rel="noreferrer">WATCH</a></p>
+                                                    </div>
                                                 </Card.Text>
                                             </Card.Body>
                                         </Card>

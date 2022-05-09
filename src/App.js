@@ -3,9 +3,9 @@ import LaunchDetails from './Pages/LaunchDetails';
 
 function App() {
   return (
-    <>
+    <div>
       <LaunchDetails />
-    </>
+    </div>
   );
 }
 
