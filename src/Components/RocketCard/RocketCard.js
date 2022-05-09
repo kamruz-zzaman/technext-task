@@ -25,18 +25,35 @@ const RocketCard = () => {
     return (
         <>
             <section>
-                <div className="d-flex justify-content-center my-5">
-                    <Form onSubmit={handleSearch} className="d-flex w-25 my-5">
-                        <FormControl
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                            name='search'
-                            onChange={onChangeHandle}
-                        />
-                        <Button type='submit' variant="outline-danger">Search</Button>
-                    </Form>
+                <div className='d-none d-md-block'>
+                    <div className="d-flex justify-content-center">
+                        <Form onSubmit={handleSearch} className="d-flex w-25 my-5">
+                            <FormControl
+                                type="search"
+                                placeholder="Search"
+                                className="me-2"
+                                aria-label="Search"
+                                name='search'
+                                onChange={onChangeHandle}
+                            />
+                            <Button type='submit' variant="outline-danger">Search</Button>
+                        </Form>
+                    </div>
+                </div>
+                <div className='d-block d-md-none'>
+                    <div className="d-flex justify-content-center">
+                        <Form onSubmit={handleSearch} className="d-flex w-75 my-5">
+                            <FormControl
+                                type="search"
+                                placeholder="Search"
+                                className="me-2"
+                                aria-label="Search"
+                                name='search'
+                                onChange={onChangeHandle}
+                            />
+                            <Button type='submit' variant="outline-danger">Search</Button>
+                        </Form>
+                    </div>
                 </div>
                 {
                     isLoading ?
@@ -50,7 +67,7 @@ const RocketCard = () => {
                                     {rockets.map((data) => (
                                         <Col >
                                             <Card>
-                                                <Card.Img variant="top" src={data.links.mission_patch} />
+                                                <Card.Img variant="top" src={data.links.mission_patch} alt="Rocket" />
                                                 <Card.Body>
                                                     <Card.Title>{data.mission_name} | {data.rocket.rocket_name} | {data.rocket.rocket_type}</Card.Title>
                                                     <Card.Text>
