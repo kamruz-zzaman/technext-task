@@ -61,7 +61,7 @@ const RocketCard = () => {
                             <Spinner animation="border" variant="primary" />
                         </div>
                         :
-                        search.length === 0 ?
+                        !search ?
                             <div className='container my-5'>
                                 <Row xs={1} md={3} className="g-4 w-100">
                                     {rockets.map((data) => (
