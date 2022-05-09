@@ -13,11 +13,12 @@ const getAllData = createSlice({
         },
         getRockets: (state, action) => {
             state.rockets = action.payload;
+            state.isLoading = false;
         },
     },
 });
 
-export default getAllData.reducer
+export default getAllData;
 
 
 const { getRockets, startLoading } = getAllData.actions
