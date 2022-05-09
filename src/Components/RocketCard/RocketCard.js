@@ -1,17 +1,10 @@
 import React from 'react';
-import { Card, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 
 const RocketCard = () => {
     return (
         <>
             <section className=''>
-                <InputGroup className="my-5 w-25 mx-auto">
-                    <FormControl
-                        placeholder="Search"
-                        aria-describedby="basic-addon1"
-                    />
-                    <Button className='ms-5 bg-danger border-danger'>Go</Button>
-                </InputGroup>
                 <div className='container my-5'>
                     <Row xs={1} md={3} className="g-4 w-100">
                         {Array.from({ length: 4 }).map((_, idx) => (

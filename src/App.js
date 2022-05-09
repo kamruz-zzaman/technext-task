@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import RocketCard from './Components/RocketCard/RocketCard';
+import LaunchDetails from './Pages/LaunchDetails';
 
 function App() {
   return (
     <>
-      <RocketCard />
+      <LaunchDetails />
     </>
   );
 }
